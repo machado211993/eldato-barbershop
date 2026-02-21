@@ -1,0 +1,177 @@
+/* ═══════════════════════════════════════════
+   EL DATO BARBERSHOP — GLOBAL STYLES
+═══════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+/* ── CSS Variables ── */
+:root {
+  --gold: #C9A84C;
+  --gold-light: #F0C040;
+  --gold-dark: #9A7A2E;
+  --gold-rgb: 201, 168, 76;
+  --black: #0A0A0A;
+  --dark: #111111;
+  --dark2: #1A1A1A;
+  --dark3: #242424;
+  --white: #F5F0E8;
+  --gray: #888888;
+  --font-display: 'Playfair Display', serif;
+  --font-bebas: 'Bebas Neue', cursive;
+  --font-body: 'Montserrat', sans-serif;
+}
+
+/* ── Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* ── Noise Texture Overlay ── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.45;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--black); }
+::-webkit-scrollbar-thumb { background: var(--gold-dark); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+
+/* ── Typography ── */
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-display);
+  line-height: 1.1;
+}
+
+a { text-decoration: none; color: inherit; }
+
+/* ── Utility Classes ── */
+.section {
+  padding: 100px 5%;
+
+  @media (max-width: 768px) {
+    padding: 70px 5%;
+  }
+}
+
+.section-eyebrow {
+  font-size: 10px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-family: var(--font-body);
+  font-weight: 600;
+
+  &::before {
+    content: '';
+    width: 30px;
+    height: 1px;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+
+  &.centered {
+    justify-content: center;
+    &::before { display: none; }
+  }
+}
+
+.section-title {
+  font-size: clamp(36px, 5vw, 60px);
+  font-weight: 900;
+  margin-bottom: 20px;
+
+  em {
+    color: var(--gold);
+    font-style: italic;
+  }
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--gold);
+  color: var(--black);
+  padding: 16px 42px;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-family: var(--font-body);
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: var(--gold-light);
+    transform: translateY(-3px);
+    box-shadow: 0 20px 40px rgba(var(--gold-rgb), 0.3);
+  }
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid rgba(var(--gold-rgb), 0.5);
+  color: var(--gold);
+  padding: 16px 42px;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: var(--font-body);
+  cursor: pointer;
+  background: transparent;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: rgba(var(--gold-rgb), 0.1);
+    border-color: var(--gold);
+    transform: translateY(-3px);
+  }
+}
+
+/* ── Reveal animation ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Selection ── */
+::selection {
+  background: var(--gold);
+  color: var(--black);
+}

@@ -1,0 +1,73 @@
+<footer>
+  <div class="footer-top">
+
+    <!-- Brand column -->
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <div class="footer-logo-circle">ED</div>
+        <div>
+          <div class="footer-brand-name">El Dato</div>
+          <div class="footer-brand-sub">Barbershop</div>
+        </div>
+      </div>
+      <p class="footer-desc">
+        El lugar donde el estilo masculino se convierte en arte. Más de 9 años transformando
+        hombres en Corrientes, Argentina.
+      </p>
+      <div class="footer-social">
+        <a
+          *ngFor="let s of socialLinks"
+          [href]="s.url"
+          target="_blank"
+          class="social-btn"
+          [title]="s.label"
+        >
+          <i [class]="s.icon"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Services column -->
+    <div class="footer-col">
+      <h4>Servicios</h4>
+      <ul class="footer-links">
+        <li *ngFor="let s of services">
+          <a (click)="scrollTo('servicios')">{{ s }}</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Nav column -->
+    <div class="footer-col">
+      <h4>Navegación</h4>
+      <ul class="footer-links">
+        <li *ngFor="let n of navLinks">
+          <a (click)="scrollTo(n.id)">{{ n.label }}</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Contact column -->
+    <div class="footer-col">
+      <h4>Contacto</h4>
+      <ul class="footer-links">
+        <li><a href="https://wa.me/5493794000000" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+        <li><a href="https://www.instagram.com/eldatobarbershop" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+        <li><a href="https://www.facebook.com/eldatobarbershop" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+        <li><a href="https://www.tiktok.com/@eldatobarbershop" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a></li>
+        <li><a href="mailto:eldato@barbershop.com"><i class="fa-solid fa-envelope"></i> Email</a></li>
+        <li><a href="#"><i class="fa-solid fa-location-dot"></i> Corrientes, Arg.</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-copy">
+      © {{ currentYear }} <span>El Dato Barbershop</span>. Todos los derechos reservados.
+    </div>
+    <div class="footer-legal">
+      <a href="#">Política de Privacidad</a>
+      <a href="#">Términos de Uso</a>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,22 @@
+<div id="horarios" class="hours-section">
+  <div class="hours-header">
+    <div class="section-eyebrow centered" style="color: rgba(0,0,0,0.55)">Cuándo atendemos</div>
+    <h2 class="section-title" style="color: var(--black)">Horarios de <strong>Atención</strong></h2>
+  </div>
+
+  <div class="hours-grid">
+    <div
+      class="hours-item"
+      *ngFor="let h of hours"
+      [class.closed]="h.closed"
+    >
+      <div class="hours-day">{{ h.day }}</div>
+      <div class="hours-time" [class.closed-text]="h.closed">{{ h.time }}</div>
+    </div>
+
+    <div class="hours-item hours-online">
+      <div class="hours-day">Turnos Online</div>
+      <div class="hours-time">24 / 7 🔥</div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,55 @@
+.hours-section {
+  background: var(--gold);
+  padding: 80px 5%;
+  text-align: center;
+}
+
+.hours-header {
+  margin-bottom: 50px;
+}
+
+.hours-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3px;
+
+  @media (max-width: 1024px) { grid-template-columns: repeat(4, 1fr); }
+  @media (max-width: 768px)  { grid-template-columns: repeat(2, 1fr); }
+  @media (max-width: 480px)  { grid-template-columns: repeat(2, 1fr); }
+}
+
+.hours-item {
+  background: rgba(0, 0, 0, 0.09);
+  padding: 32px 20px;
+  transition: background 0.3s;
+
+  &:hover { background: rgba(0, 0, 0, 0.16); }
+
+  &.closed { opacity: 0.5; }
+}
+
+.hours-online {
+  background: rgba(0, 0, 0, 0.2) !important;
+  &:hover { background: rgba(0, 0, 0, 0.28) !important; }
+}
+
+.hours-day {
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.55);
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.hours-time {
+  font-family: var(--font-bebas);
+  font-size: 26px;
+  color: var(--black);
+  line-height: 1.15;
+
+  &.closed-text {
+    font-size: 22px;
+    color: rgba(0, 0, 0, 0.4);
+  }
+}

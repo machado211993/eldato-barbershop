@@ -1,0 +1,24 @@
+<section id="barberos" class="section">
+  <div class="reveal">
+    <div class="section-eyebrow">El equipo</div>
+    <h2 class="section-title">Nuestros <em>Maestros</em></h2>
+  </div>
+
+  <div class="barbers-grid">
+    <div class="barber-card reveal" *ngFor="let b of barbers">
+      <div class="barber-photo">
+        <i class="fa-solid fa-user-circle"></i>
+        <div class="barber-badge" *ngIf="b.badge">{{ b.badge }}</div>
+        <!-- Reemplazar con: <img [src]="'assets/images/' + b.name + '.jpg'" [alt]="b.name"> -->
+      </div>
+      <div class="barber-info">
+        <h3 class="barber-name">{{ b.name }}</h3>
+        <div class="barber-role">{{ b.role }}</div>
+        <p class="barber-bio">{{ b.bio }}</p>
+        <div class="barber-skills">
+          <span class="skill-tag" *ngFor="let s of b.skills">{{ s }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

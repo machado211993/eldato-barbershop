@@ -1,0 +1,30 @@
+<section id="galeria" class="section">
+  <div class="gallery-header reveal">
+    <div class="section-eyebrow centered">Nuestro trabajo</div>
+    <h2 class="section-title">La <em>Galería</em></h2>
+  </div>
+
+  <div class="gallery-grid reveal">
+    <div
+      class="gallery-item"
+      *ngFor="let item of galleryItems"
+      [class.featured]="item.span"
+    >
+      <div class="gallery-placeholder">
+        <i [class]="item.icon"></i>
+        <span>{{ item.label }}</span>
+        <!-- Reemplazar con: <img src="assets/images/gallery/X.jpg" [alt]="item.label"> -->
+      </div>
+      <div class="gallery-overlay">
+        <i class="fa-solid fa-magnifying-glass-plus"></i>
+      </div>
+    </div>
+  </div>
+
+  <div class="gallery-footer reveal">
+    <button class="btn-outline" (click)="openInstagram()">
+      <i class="fab fa-instagram"></i>
+      Ver más en Instagram
+    </button>
+  </div>
+</section>

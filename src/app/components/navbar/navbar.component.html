@@ -1,0 +1,39 @@
+<nav [class.scrolled]="isScrolled">
+  <a class="nav-logo" (click)="scrollTo('hero')">
+    <div class="nav-logo-circle">ED</div>
+    <div class="nav-brand">
+      <span class="brand-name">El Dato</span>
+      <span class="brand-sub">Barbershop</span>
+    </div>
+  </a>
+
+  <ul class="nav-links">
+    <li><a (click)="scrollTo('nosotros')">Nosotros</a></li>
+    <li><a (click)="scrollTo('servicios')">Servicios</a></li>
+    <li><a (click)="scrollTo('barberos')">Barberos</a></li>
+    <li><a (click)="scrollTo('galeria')">Galería</a></li>
+    <li><a (click)="scrollTo('testimonios')">Reviews</a></li>
+    <li><a (click)="scrollTo('horarios')">Horarios</a></li>
+  </ul>
+
+  <button class="nav-cta" (click)="scrollTo('reservar')">
+    Reservar Turno
+  </button>
+
+  <div class="hamburger" [class.open]="isMobileMenuOpen" (click)="toggleMobileMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" [class.open]="isMobileMenuOpen">
+  <a (click)="scrollTo('nosotros')">Nosotros</a>
+  <a (click)="scrollTo('servicios')">Servicios</a>
+  <a (click)="scrollTo('barberos')">Barberos</a>
+  <a (click)="scrollTo('galeria')">Galería</a>
+  <a (click)="scrollTo('testimonios')">Reviews</a>
+  <a (click)="scrollTo('horarios')">Horarios</a>
+  <a (click)="scrollTo('reservar')" class="mobile-cta">Reservar Turno</a>
+</div>

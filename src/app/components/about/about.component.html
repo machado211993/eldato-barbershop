@@ -1,0 +1,31 @@
+<section id="nosotros" class="section about-section">
+  <div class="about-visual reveal">
+    <div class="about-card">
+      <div class="about-quote">
+        No cortamos pelo. Construimos identidad, confianza y estilo para el hombre de hoy.
+      </div>
+      <div class="about-author">— El Dato Barbershop</div>
+      <div class="about-badge">
+        <span class="badge-number">9+</span>
+        <span class="badge-label">Años de Arte</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="about-text reveal">
+    <div class="section-eyebrow">Nuestra Historia</div>
+    <h2 class="section-title">
+      Más que una barbería,<br>
+      un <em>estilo de vida</em>
+    </h2>
+    <p>El Dato Barbershop nació con una misión clara: elevar el estándar del cuidado masculino en Corrientes. Somos más que un corte de pelo; somos el lugar donde los hombres se transforman, se relajan y salen con la mejor versión de sí mismos.</p>
+    <p>Cada servicio es una experiencia personalizada, combinando técnicas clásicas con tendencias modernas, en un ambiente que transpira autenticidad y carácter masculino.</p>
+
+    <div class="about-features">
+      <div class="about-feature" *ngFor="let f of features">
+        <i [class]="f.icon"></i>
+        <span>{{ f.text }}</span>
+      </div>
+    </div>
+  </div>
+</section>

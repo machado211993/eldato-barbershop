@@ -1,0 +1,40 @@
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-lines"></div>
+
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <span class="line"></span>
+      Desde 2015 · Corrientes, Argentina
+      <span class="line"></span>
+    </div>
+
+    <!-- Reemplazá esto con: <img src="assets/images/logo.png" alt="El Dato Barbershop"> -->
+    <div class="hero-logo">
+      <span class="logo-initials">ED</span>
+      <span class="logo-sub">Barbershop</span>
+    </div>
+
+    <h1 class="hero-title">
+      El Dato
+      <em>Barbershop</em>
+    </h1>
+    <p class="hero-subtitle">Estilo · Precisión · Carácter</p>
+
+    <div class="hero-buttons">
+      <button class="btn-primary" (click)="scrollTo('reservar')">
+        <i class="fa-regular fa-calendar-check"></i>
+        Reservar Turno
+      </button>
+      <button class="btn-outline" (click)="openWhatsApp()">
+        <i class="fab fa-whatsapp"></i>
+        WhatsApp
+      </button>
+    </div>
+  </div>
+
+  <div class="hero-scroll" (click)="scrollTo('stats')">
+    <span>Scroll</span>
+    <i class="fa-solid fa-chevron-down"></i>
+  </div>
+</section>

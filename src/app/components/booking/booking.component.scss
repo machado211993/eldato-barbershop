@@ -1,0 +1,201 @@
+:host { display: block; background: var(--dark); position: relative; overflow: hidden; }
+
+:host::before {
+  content: '';
+  position: absolute;
+  right: -200px; top: -200px;
+  width: 600px; height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201,168,76,0.05), transparent 70%);
+  pointer-events: none;
+}
+
+.booking-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+}
+
+.booking-desc {
+  color: rgba(245, 240, 232, 0.6);
+  line-height: 1.9;
+  font-weight: 300;
+  font-size: 15px;
+  margin-bottom: 44px;
+}
+
+.contact-items {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.contact-icon {
+  width: 50px; height: 50px;
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s;
+
+  i { color: var(--gold); font-size: 18px; }
+
+  &:hover { background: var(--gold); i { color: var(--black); } }
+}
+
+.contact-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.contact-label {
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--gray);
+  font-weight: 600;
+}
+
+.contact-value {
+  font-size: 15px;
+  color: var(--white);
+  font-weight: 400;
+
+  &.link {
+    color: var(--white);
+    transition: color 0.3s;
+    &:hover { color: var(--gold); }
+  }
+}
+
+/* ── Form ── */
+.booking-form {
+  background: var(--dark2);
+  border: 1px solid rgba(201, 168, 76, 0.12);
+  padding: 52px 44px;
+
+  @media (max-width: 600px) { padding: 36px 28px; }
+}
+
+.form-title {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 36px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+
+  @media (max-width: 600px) { grid-template-columns: 1fr; }
+}
+
+.form-group {
+  margin-bottom: 20px;
+
+  label {
+    display: block;
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+
+  input, select, textarea {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(201, 168, 76, 0.2);
+    color: var(--white);
+    padding: 14px 18px;
+    font-size: 14px;
+    font-family: var(--font-body);
+    font-weight: 300;
+    outline: none;
+    transition: border-color 0.3s, background 0.3s;
+    appearance: none;
+
+    &:focus {
+      border-color: var(--gold);
+      background: rgba(201, 168, 76, 0.05);
+    }
+
+    option { background: var(--dark2); color: var(--white); }
+  }
+
+  textarea { resize: vertical; min-height: 90px; }
+
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1) sepia(1) saturate(3) hue-rotate(10deg);
+    cursor: pointer;
+  }
+}
+
+.form-submit {
+  width: 100%;
+  background: var(--gold);
+  color: var(--black);
+  border: none;
+  padding: 18px;
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: var(--font-body);
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 8px;
+
+  &:hover {
+    background: var(--gold-light);
+    box-shadow: 0 12px 30px rgba(201, 168, 76, 0.35);
+    transform: translateY(-2px);
+  }
+
+  &:active { transform: translateY(0); }
+}
+
+/* ── Toast ── */
+.toast {
+  position: fixed;
+  bottom: 100px; right: 30px;
+  background: var(--dark2);
+  border: 1px solid var(--gold);
+  color: var(--white);
+  padding: 16px 22px;
+  font-size: 13px;
+  z-index: 9998;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.4s ease;
+  pointer-events: none;
+  max-width: 320px;
+
+  &.show { opacity: 1; transform: translateY(0); }
+  &.error { border-color: #ff4444; i { color: #ff4444; } }
+
+  i { color: var(--gold); font-size: 18px; flex-shrink: 0; }
+}

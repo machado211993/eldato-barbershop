@@ -1,0 +1,85 @@
+<section id="reservar" class="section">
+  <div class="booking-container">
+
+    <!-- Info Side -->
+    <div class="booking-info reveal">
+      <div class="section-eyebrow">Agendá tu visita</div>
+      <h2 class="section-title">Reservá tu <em>Turno</em></h2>
+      <p class="booking-desc">
+        No esperes más. Reservá tu turno online en segundos y llegá directo a la silla.
+        Sin colas, sin esperas innecesarias.
+      </p>
+
+      <div class="contact-items">
+        <div class="contact-item" *ngFor="let c of contactInfo">
+          <div class="contact-icon"><i [class]="c.icon"></i></div>
+          <div class="contact-text">
+            <span class="contact-label">{{ c.label }}</span>
+            <a *ngIf="c.link" [href]="c.link" target="_blank" class="contact-value link">{{ c.value }}</a>
+            <span *ngIf="!c.link" class="contact-value">{{ c.value }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Form Side -->
+    <div class="booking-form reveal">
+      <h3 class="form-title">Solicitar Turno</h3>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Nombre *</label>
+          <input type="text" placeholder="Tu nombre" [(ngModel)]="form.name" name="name" />
+        </div>
+        <div class="form-group">
+          <label>Teléfono</label>
+          <input type="tel" placeholder="+54 379..." [(ngModel)]="form.phone" name="phone" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Servicio *</label>
+        <select [(ngModel)]="form.service" name="service">
+          <option value="">— Elegir servicio —</option>
+          <option *ngFor="let s of services" [value]="s">{{ s }}</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Fecha *</label>
+          <input type="date" [(ngModel)]="form.date" name="date" [min]="minDate" />
+        </div>
+        <div class="form-group">
+          <label>Hora Preferida *</label>
+          <select [(ngModel)]="form.time" name="time">
+            <option value="">— Seleccionar —</option>
+            <option *ngFor="let t of timeSlots" [value]="t">{{ t }}</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Notas adicionales</label>
+        <textarea
+          placeholder="¿Alguna preferencia, foto de referencia u observación?"
+          [(ngModel)]="form.notes"
+          name="notes"
+          rows="3"
+        ></textarea>
+      </div>
+
+      <button class="form-submit" (click)="submitBooking()">
+        <i class="fa-solid fa-calendar-check"></i>
+        Confirmar Reserva vía WhatsApp
+      </button>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" [class.show]="showToast" [class.error]="toastError">
+    <i class="fa-solid fa-circle-check" *ngIf="!toastError"></i>
+    <i class="fa-solid fa-triangle-exclamation" *ngIf="toastError"></i>
+    {{ toastMsg }}
+  </div>
+</section>

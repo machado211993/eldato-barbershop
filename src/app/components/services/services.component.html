@@ -1,0 +1,21 @@
+<section id="servicios" class="section">
+  <div class="services-header reveal">
+    <div class="section-eyebrow centered">Lo que ofrecemos</div>
+    <h2 class="section-title">Nuestros <em>Servicios</em></h2>
+  </div>
+
+  <div class="services-grid">
+    <div class="service-card reveal" *ngFor="let s of services">
+      <div class="service-icon">
+        <i [class]="s.icon"></i>
+      </div>
+      <h3 class="service-name">{{ s.name }}</h3>
+      <p class="service-desc">{{ s.description }}</p>
+      <div class="service-price">
+        <span class="price-from">desde</span>
+        <span class="price-currency">$</span>
+        <span class="price-amount">{{ s.price }}</span>
+      </div>
+    </div>
+  </div>
+</section>

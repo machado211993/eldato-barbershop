@@ -1,0 +1,39 @@
+<section id="testimonios" class="section">
+  <div class="testimonials-header reveal">
+    <div class="section-eyebrow centered">Lo que dicen</div>
+    <h2 class="section-title">Clientes <em>Reales</em></h2>
+  </div>
+
+  <div class="track-wrapper">
+    <div class="testimonials-track">
+      <!-- Render twice for infinite scroll illusion -->
+      <div class="testimonial-card" *ngFor="let t of testimonials">
+        <div class="testimonial-stars">
+          <i class="fa-solid fa-star" *ngFor="let s of starsArray"></i>
+        </div>
+        <p class="testimonial-text">"{{ t.text }}"</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">{{ t.initials }}</div>
+          <div>
+            <div class="author-name">{{ t.name }}</div>
+            <div class="author-date">{{ t.date }}</div>
+          </div>
+        </div>
+      </div>
+      <!-- Duplicate for seamless loop -->
+      <div class="testimonial-card" *ngFor="let t of testimonials">
+        <div class="testimonial-stars">
+          <i class="fa-solid fa-star" *ngFor="let s of starsArray"></i>
+        </div>
+        <p class="testimonial-text">"{{ t.text }}"</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">{{ t.initials }}</div>
+          <div>
+            <div class="author-name">{{ t.name }}</div>
+            <div class="author-date">{{ t.date }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
