@@ -65,7 +65,7 @@ export class BookingComponent implements OnInit {
       icon: "fab fa-whatsapp",
       label: "WhatsApp",
       value: "+54 9 379 486-2502",
-      link: "https://wa.me/5493794862502",
+      link: "https://wa.me/5493794716331",
     },
     {
       icon: "fa-solid fa-location-dot",
