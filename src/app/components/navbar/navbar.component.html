@@ -1,6 +1,10 @@
 <nav [class.scrolled]="isScrolled">
   <a class="nav-logo" (click)="scrollTo('hero')">
-    <div class="nav-logo-circle">ED</div>
+    <img
+      src="assets/images/logo.png"
+      alt="Logo El Dato Barbershop"
+      class="nav-logo-img"
+    />
     <div class="nav-brand">
       <span class="brand-name">El Dato</span>
       <span class="brand-sub">Barbershop</span>
@@ -16,11 +20,13 @@
     <li><a (click)="scrollTo('horarios')">Horarios</a></li>
   </ul>
 
-  <button class="nav-cta" (click)="scrollTo('reservar')">
-    Reservar Turno
-  </button>
+  <button class="nav-cta" (click)="scrollTo('reservar')">Reservar Turno</button>
 
-  <div class="hamburger" [class.open]="isMobileMenuOpen" (click)="toggleMobileMenu()">
+  <div
+    class="hamburger"
+    [class.open]="isMobileMenuOpen"
+    (click)="toggleMobileMenu()"
+  >
     <span></span>
     <span></span>
     <span></span>

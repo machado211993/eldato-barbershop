@@ -1,6 +1,8 @@
 nav {
   position: fixed;
-  top: 0; left: 0; right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 1000;
   display: flex;
   align-items: center;
@@ -23,27 +25,29 @@ nav {
 .nav-logo {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
   cursor: pointer;
 }
 
-.nav-logo-circle {
-  width: 46px; height: 46px;
-  border-radius: 50%;
-  background: var(--black);
-  border: 2px solid var(--gold);
-  display: flex; align-items: center; justify-content: center;
-  font-family: var(--font-bebas);
-  font-size: 20px;
-  color: var(--gold);
-  letter-spacing: 1px;
+/*  Logo imagen */
+.nav-logo-img {
+  height: 52px;
+  width: auto;
+  object-fit: contain;
   flex-shrink: 0;
-  transition: all 0.3s;
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
 
   &:hover {
-    background: var(--gold);
-    color: var(--black);
+    transform: scale(1.05);
+    filter: brightness(1.1);
   }
+}
+
+/* Cuando el nav hace scroll */
+nav.scrolled .nav-logo-img {
+  height: 44px;
 }
 
 .nav-brand {
@@ -84,17 +88,21 @@ nav {
     padding-bottom: 4px;
 
     &::after {
-      content: '';
+      content: "";
       position: absolute;
-      bottom: -2px; left: 0;
-      width: 0; height: 1px;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 1px;
       background: var(--gold);
       transition: width 0.3s ease;
     }
 
     &:hover {
       color: var(--gold);
-      &::after { width: 100%; }
+      &::after {
+        width: 100%;
+      }
     }
   }
 
@@ -144,15 +152,30 @@ nav {
     border-radius: 2px;
     transition: all 0.3s ease;
 
-    &:first-child { width: 100%; }
-    &:nth-child(2) { width: 70%; }
-    &:last-child { width: 100%; }
+    &:first-child {
+      width: 100%;
+    }
+    &:nth-child(2) {
+      width: 70%;
+    }
+    &:last-child {
+      width: 100%;
+    }
   }
 
   &.open {
-    span:first-child { transform: rotate(45deg) translate(5px, 5px); width: 100%; }
-    span:nth-child(2) { opacity: 0; transform: translateX(-10px); }
-    span:last-child { transform: rotate(-45deg) translate(5px, -5px); width: 100%; }
+    span:first-child {
+      transform: rotate(45deg) translate(5px, 5px);
+      width: 100%;
+    }
+    span:nth-child(2) {
+      opacity: 0;
+      transform: translateX(-10px);
+    }
+    span:last-child {
+      transform: rotate(-45deg) translate(5px, -5px);
+      width: 100%;
+    }
   }
 
   @media (max-width: 1024px) {
@@ -163,7 +186,9 @@ nav {
 /* ── Mobile Menu ── */
 .mobile-menu {
   position: fixed;
-  top: 80px; left: 0; right: 0;
+  top: 80px;
+  left: 0;
+  right: 0;
   background: rgba(10, 10, 10, 0.98);
   backdrop-filter: blur(16px);
   z-index: 999;
@@ -187,7 +212,9 @@ nav {
     color: var(--white);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     cursor: pointer;
-    transition: color 0.3s, background 0.3s;
+    transition:
+      color 0.3s,
+      background 0.3s;
     font-weight: 500;
 
     &:hover {
