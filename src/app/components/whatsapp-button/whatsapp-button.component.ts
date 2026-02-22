@@ -7,7 +7,7 @@ import { Component } from "@angular/core";
   imports: [CommonModule],
   template: `
     <a
-      href="https://wa.me/5493794716331text=Hola!%20Quiero%20reservar%20un%20turno%20en%20El%20Dato%20Barbershop%20✂️"
+      href="https://wa.me/5493794716331?text=Hola%20Quiero%20reservar%20un%20turno%20en%20El%20Dato%20Barbershop%20✂️"
       target="_blank"
       class="wa-btn"
       title="Chateá con nosotros"
