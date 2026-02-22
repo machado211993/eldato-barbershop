@@ -1,0 +1,5 @@
+{
+  "outputDirectory": "dist/eldato-barbershop",
+  "framework": null,
+  "rewrites": [{ "source": "/(.*)", "destination": "/" }]
+}
