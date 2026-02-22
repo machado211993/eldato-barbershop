@@ -112,7 +112,7 @@ export class BookingComponent implements OnInit {
       `📝 *Notas:* ${this.form.notes || "Ninguna"}`;
 
     window.open(
-      `https://wa.me/5493794862502?text=${encodeURIComponent(msg)}`,
+      `https://wa.me/5493794716331?text=${encodeURIComponent(msg)}`,
       "_blank",
     );
     this.toast("¡Redirigiendo a WhatsApp! Tu turno está casi listo. 🔥");
