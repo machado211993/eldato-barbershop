@@ -1,5 +1,10 @@
 {
-  "outputDirectory": "dist/eldato-barbershop",
-  "framework": null,
-  "rewrites": [{ "source": "/(.*)", "destination": "/" }]
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist/eldato-barbershop/browser",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
 }
