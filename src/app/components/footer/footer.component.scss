@@ -11,8 +11,13 @@ footer {
   padding-bottom: 60px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 
-  @media (max-width: 1024px) { grid-template-columns: 1fr 1fr; gap: 40px; }
-  @media (max-width: 600px)  { grid-template-columns: 1fr; }
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .footer-logo {
@@ -23,10 +28,13 @@ footer {
 }
 
 .footer-logo-circle {
-  width: 56px; height: 56px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   background: var(--gold);
-  display: flex; align-items: center; justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-family: var(--font-bebas);
   font-size: 26px;
   color: var(--black);
@@ -64,9 +72,12 @@ footer {
 }
 
 .social-btn {
-  width: 42px; height: 42px;
+  width: 42px;
+  height: 42px;
   border: 1px solid rgba(201, 168, 76, 0.22);
-  display: flex; align-items: center; justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: var(--gray);
   font-size: 15px;
   transition: all 0.3s;
@@ -91,10 +102,12 @@ footer {
     position: relative;
 
     &::after {
-      content: '';
+      content: "";
       position: absolute;
-      bottom: -10px; left: 0;
-      width: 20px; height: 1px;
+      bottom: -10px;
+      left: 0;
+      width: 20px;
+      height: 1px;
       background: var(--gold);
       opacity: 0.5;
     }
@@ -117,9 +130,16 @@ footer {
     align-items: center;
     gap: 8px;
 
-    i { color: var(--gold); font-size: 13px; width: 16px; text-align: center; }
+    i {
+      color: var(--gold);
+      font-size: 13px;
+      width: 16px;
+      text-align: center;
+    }
 
-    &:hover { color: var(--white); }
+    &:hover {
+      color: var(--white);
+    }
   }
 }
 
@@ -137,7 +157,9 @@ footer {
   color: rgba(245, 240, 232, 0.28);
   letter-spacing: 0.5px;
 
-  span { color: var(--gold); }
+  span {
+    color: var(--gold);
+  }
 }
 
 .footer-legal {
@@ -150,6 +172,65 @@ footer {
     letter-spacing: 0.5px;
     transition: color 0.3s;
 
-    &:hover { color: var(--gold); }
+    &:hover {
+      color: var(--gold);
+    }
+  }
+}
+
+// ── Crédito del desarrollador ─────────────────────────────────────────────
+// Bloque completamente separado del footer del cliente.
+// Usa un fondo levemente más oscuro y tipografía pequeña para no competir.
+.footer-dev {
+  background: #080808;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  padding: 12px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+
+  .footer-dev-text {
+    font-size: 10px;
+    letter-spacing: 0.6px;
+    color: rgba(245, 240, 232, 0.22);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    i {
+      color: rgba(201, 168, 76, 0.4);
+      font-size: 10px;
+    }
+
+    strong {
+      color: rgba(245, 240, 232, 0.38);
+      font-weight: 500;
+    }
+  }
+
+  .footer-dev-links {
+    display: flex;
+    gap: 8px;
+  }
+
+  .footer-dev-btn {
+    width: 26px;
+    height: 26px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(245, 240, 232, 0.22);
+    font-size: 11px;
+    transition: all 0.3s;
+    text-decoration: none;
+
+    &:hover {
+      border-color: rgba(201, 168, 76, 0.5);
+      color: var(--gold);
+      transform: translateY(-2px);
+    }
   }
 }
