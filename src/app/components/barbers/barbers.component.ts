@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule } from "@angular/common";
+import { Component } from "@angular/core";
 
 export interface Barber {
   name: string;
@@ -10,32 +10,32 @@ export interface Barber {
 }
 
 @Component({
-  selector: 'app-barbers',
+  selector: "app-barbers",
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './barbers.component.html',
-  styleUrls: ['./barbers.component.scss']
+  templateUrl: "./barbers.component.html",
+  styleUrls: ["./barbers.component.scss"],
 })
 export class BarbersComponent {
   barbers: Barber[] = [
     {
-      name: 'El Dato',
-      role: 'Master Barber · Fundador',
-      bio: 'Con más de 9 años de experiencia, El Dato lidera con pasión y técnica impecable. Especialista en degradados y diseños exclusivos que marcan tendencia.',
-      skills: ['Degradado', 'Diseño', 'Navaja', 'Clásico'],
-      badge: 'Fundador'
+      name: "Tomas",
+      role: "Master Barber · Fundador",
+      bio: "Con más de 9 años de experiencia, El Dato lidera con pasión y técnica impecable. Especialista en degradados y diseños exclusivos que marcan tendencia.",
+      skills: ["Degradado", "Diseño", "Navaja", "Clásico"],
+      badge: "Fundador",
     },
     {
-      name: 'Lucas M.',
-      role: 'Senior Barber',
-      bio: 'Especialista en cortes clásicos y afeitado con navaja. Conocido por su precisión quirúrgica y su trato cálido con cada cliente.',
-      skills: ['Clásico', 'Barba', 'Afeitado']
+      name: "Nahuel",
+      role: "Senior Barber",
+      bio: "Especialista en cortes clásicos y afeitado con navaja. Conocido por su precisión quirúrgica y su trato cálido con cada cliente.",
+      skills: ["Clásico", "Barba", "Afeitado"],
     },
     {
-      name: 'Martín R.',
-      role: 'Barber Specialist',
-      bio: 'Experto en tendencias actuales y cortes modernos. Siempre actualizado en las últimas técnicas internacionales del mundo de la barbería.',
-      skills: ['Moderno', 'Texturas', 'Color']
-    }
+      name: "Elian",
+      role: "Barber Specialist",
+      bio: "Experto en tendencias actuales y cortes modernos. Siempre actualizado en las últimas técnicas internacionales del mundo de la barbería.",
+      skills: ["Moderno", "Texturas", "Color"],
+    },
   ];
 }

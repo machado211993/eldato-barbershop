@@ -1,0 +1,174 @@
+.oferta-carousel {
+  position: relative;
+  width: 100%;
+  padding: 24px 0 20px;
+  overflow: hidden;
+
+  &__header {
+    text-align: center;
+    margin-bottom: 18px;
+  }
+
+  &__label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(26, 159, 212, 0.12);
+    border: 1px solid rgba(26, 159, 212, 0.35);
+    color: var(--color-primary, #1a9fd4);
+    padding: 6px 18px;
+    border-radius: 50px;
+    font-family: var(--font-heading, sans-serif);
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    i {
+      font-size: 0.75rem;
+    }
+  }
+
+  &__marquee-wrap {
+    overflow: hidden;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 80px;
+      background: linear-gradient(to right, #0a1520, transparent);
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 80px;
+      background: linear-gradient(to left, #0a1520, transparent);
+      z-index: 2;
+      pointer-events: none;
+    }
+  }
+
+  &__marquee {
+    display: flex;
+    gap: 14px;
+    width: max-content;
+    animation: marquee-scroll 20s linear infinite;
+
+    &:hover {
+      animation-play-state: paused;
+    }
+  }
+
+  &__card {
+    flex-shrink: 0;
+    width: 260px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 14px;
+    overflow: hidden;
+    transition:
+      border-color 0.3s ease,
+      transform 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+      border-color: rgba(26, 159, 212, 0.4);
+      transform: translateY(-4px);
+    }
+  }
+
+  &__card-img-wrap {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+
+  &__card:hover &__img {
+    transform: scale(1.05);
+  }
+
+  &__card-info {
+    padding: 12px 14px 14px;
+
+    .oferta-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: rgba(26, 159, 212, 0.12);
+      border: 1px solid rgba(26, 159, 212, 0.3);
+      color: var(--color-primary, #1a9fd4);
+      padding: 3px 10px;
+      border-radius: 50px;
+      font-family: var(--font-heading, sans-serif);
+      font-size: 0.68rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      i {
+        font-size: 0.65rem;
+      }
+    }
+
+    h3 {
+      font-family: var(--font-heading, sans-serif);
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--color-white, #fff);
+      margin-bottom: 4px;
+      letter-spacing: 0.5px;
+    }
+
+    p {
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.5);
+      line-height: 1.4;
+    }
+  }
+
+  // -25% porque el array es x4
+  @keyframes marquee-scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-25%);
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 16px 0 14px;
+
+    &__card {
+      width: 190px;
+    }
+
+    &__marquee {
+      animation-duration: 14s;
+    }
+
+    &__marquee-wrap {
+      &::before,
+      &::after {
+        width: 40px;
+      }
+    }
+  }
+}

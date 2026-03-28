@@ -1,0 +1,30 @@
+<div class="oferta-carousel">
+  <div class="oferta-carousel__header">
+    <span class="oferta-carousel__label">
+      <i class="fas fa-tag"></i> Súper Ofertas
+    </span>
+  </div>
+
+  <div class="oferta-carousel__marquee-wrap">
+    <div class="oferta-carousel__marquee">
+      <div
+        *ngFor="let oferta of ofertas; let i = index"
+        class="oferta-carousel__card"
+      >
+        <div class="oferta-carousel__card-img-wrap">
+          <img
+            [src]="oferta.imagen"
+            [alt]="oferta.titulo"
+            class="oferta-carousel__img"
+            loading="lazy"
+          />
+        </div>
+        <div class="oferta-carousel__card-info">
+          <span class="oferta-tag"><i class="fas fa-scissors"></i> Cortes</span>
+          <h3>{{ oferta.titulo }}</h3>
+          <p>{{ oferta.subtitulo }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

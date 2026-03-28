@@ -6,15 +6,26 @@
 
   <div class="services-grid">
     <div class="service-card reveal" *ngFor="let s of services">
-      <div class="service-icon">
-        <i [class]="s.icon"></i>
+      <div class="service-image" *ngIf="s.image">
+        <img
+          [src]="s.image"
+          [alt]="s.name"
+          loading="lazy"
+          (error)="s.image = ''"
+        />
       </div>
-      <h3 class="service-name">{{ s.name }}</h3>
-      <p class="service-desc">{{ s.description }}</p>
-      <div class="service-price">
-        <span class="price-from">desde</span>
-        <span class="price-currency">$</span>
-        <span class="price-amount">{{ s.price }}</span>
+
+      <div class="service-body">
+        <div class="service-icon">
+          <i [class]="s.icon"></i>
+        </div>
+        <h3 class="service-name">{{ s.name }}</h3>
+        <p class="service-desc">{{ s.description }}</p>
+        <div class="service-price">
+          <span class="price-from">desde</span>
+          <span class="price-currency">$</span>
+          <span class="price-amount">{{ s.price }}</span>
+        </div>
       </div>
     </div>
   </div>

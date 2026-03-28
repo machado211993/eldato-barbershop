@@ -7,7 +7,53 @@
   <div class="barbers-grid">
     <div class="barber-card reveal" *ngFor="let b of barbers">
       <div class="barber-photo">
-        <i class="fa-solid fa-user-circle"></i>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 100 100"
+          width="110"
+          height="110"
+        >
+          <!-- Cabeza -->
+          <circle
+            cx="50"
+            cy="32"
+            r="20"
+            fill="none"
+            stroke="#C9A84C"
+            stroke-width="1.5"
+            opacity="0.5"
+          />
+          <!-- Cuerpo -->
+          <path
+            d="M18 92 Q18 64 50 64 Q82 64 82 92"
+            fill="none"
+            stroke="#C9A84C"
+            stroke-width="1.5"
+            opacity="0.5"
+          />
+          <!-- Tijera izquierda -->
+          <line
+            x1="36"
+            y1="80"
+            x2="50"
+            y2="88"
+            stroke="#C9A84C"
+            stroke-width="1.2"
+            opacity="0.35"
+          />
+          <!-- Tijera derecha -->
+          <line
+            x1="64"
+            y1="80"
+            x2="50"
+            y2="88"
+            stroke="#C9A84C"
+            stroke-width="1.2"
+            opacity="0.35"
+          />
+          <!-- Punto central -->
+          <circle cx="50" cy="88" r="1.5" fill="#C9A84C" opacity="0.4" />
+        </svg>
         <div class="barber-badge" *ngIf="b.badge">{{ b.badge }}</div>
         <!-- Reemplazar con: <img [src]="'assets/images/' + b.name + '.jpg'" [alt]="b.name"> -->
       </div>

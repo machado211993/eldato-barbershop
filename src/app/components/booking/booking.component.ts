@@ -35,11 +35,11 @@ export class BookingComponent implements OnInit {
 
   services = [
     "Corte Clásico",
-    "Afeitado Navaja",
     "Corte + Barba",
-    "Diseño de Barba",
-    "Tratamiento Capilar",
-    "El Dato VIP (pack completo)",
+    "Solo Barba",
+    "Mecha Normal",
+    "Mecha Vip",
+    "Global",
   ];
 
   timeSlots = [
