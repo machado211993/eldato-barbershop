@@ -42,7 +42,7 @@ import { WhatsappButtonComponent } from "./components/whatsapp-button/whatsapp-b
       <app-about></app-about>
       <app-services></app-services>
       <app-barbers></app-barbers>
-      <!--<app-gallery></app-gallery>-->
+      <app-gallery></app-gallery>
       <app-testimonials></app-testimonials>
       <app-hours></app-hours>
       <app-booking></app-booking>

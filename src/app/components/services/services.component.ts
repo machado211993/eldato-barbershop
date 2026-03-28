@@ -19,27 +19,6 @@ export interface Service {
 export class ServicesComponent {
   services: Service[] = [
     {
-      icon: "fa-solid fa-scissors",
-      name: "Corte Clásico",
-      description: "",
-      price: "10.000",
-      image: "assets/images/barberia1.jpeg",
-    },
-    {
-      icon: "fa-solid fa-sparkles",
-      name: "Corte Clásico",
-      description: "",
-      price: "10.000",
-      image: "assets/images/barberia5.jpeg",
-    },
-    {
-      icon: "fa-solid fa-star",
-      name: "Corte Clásico",
-      description: "",
-      price: "10.000",
-      image: "assets/images/corteclasico.jpeg",
-    },
-    {
       icon: "fa-solid fa-star",
       name: "Corte Clásico",
       description: "",

@@ -11,9 +11,18 @@
       [class.featured]="item.span"
     >
       <div class="gallery-placeholder">
-        <i [class]="item.icon"></i>
-        <span>{{ item.label }}</span>
-        <!-- Reemplazar con: <img src="assets/images/gallery/X.jpg" [alt]="item.label"> -->
+        <img
+          *ngIf="item.image"
+          [src]="item.image"
+          [alt]="item.label"
+          loading="lazy"
+          (error)="item.image = ''"
+        />
+        <!-- Fallback si no hay imagen -->
+        <ng-container *ngIf="!item.image">
+          <i [class]="item.icon"></i>
+          <span>{{ item.label }}</span>
+        </ng-container>
       </div>
       <div class="gallery-overlay">
         <i class="fa-solid fa-magnifying-glass-plus"></i>

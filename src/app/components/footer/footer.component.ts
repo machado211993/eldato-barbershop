@@ -41,11 +41,11 @@ export class FooterComponent {
 
   services = [
     "Corte Clásico",
-    "Afeitado Navaja",
     "Corte + Barba",
-    "Diseño de Barba",
-    "Tratamiento Capilar",
-    "Pack VIP",
+    "Solo Barba",
+    "Mecha Normal",
+    "Mecha Vip",
+    "Global",
   ];
 
   navLinks = [
