@@ -8,11 +8,12 @@ import { GalleryComponent } from "./components/gallery/gallery.component";
 import { HeroComponent } from "./components/hero/hero.component";
 import { HoursComponent } from "./components/hours/hours.component";
 import { NavbarComponent } from "./components/navbar/navbar.component";
-import { OfertaCarouselComponent } from "./components/oferta-carousel/oferta-carousel.component";
 import { ServicesComponent } from "./components/services/services.component";
 import { StatsComponent } from "./components/stats/stats.component";
 import { TestimonialsComponent } from "./components/testimonials/testimonials.component";
 import { WhatsappButtonComponent } from "./components/whatsapp-button/whatsapp-button.component";
+import { VideoIntroComponent } from "./components/video-intro/video-intro.component";
+import { DevContactComponent } from "./components/dev-contact/dev-contact.component";
 
 @Component({
   selector: "app-root",
@@ -31,12 +32,13 @@ import { WhatsappButtonComponent } from "./components/whatsapp-button/whatsapp-b
     BookingComponent,
     FooterComponent,
     WhatsappButtonComponent,
-    OfertaCarouselComponent,
+    VideoIntroComponent,
+    DevContactComponent,
   ],
   template: `
+    <app-video-intro *ngIf="showIntro" (introDone)="showIntro = false"></app-video-intro>
     <app-navbar></app-navbar>
     <main>
-      <app-oferta-carousel></app-oferta-carousel>
       <app-hero></app-hero>
       <app-stats></app-stats>
       <app-about></app-about>
@@ -49,6 +51,7 @@ import { WhatsappButtonComponent } from "./components/whatsapp-button/whatsapp-b
     </main>
     <app-footer></app-footer>
     <app-whatsapp-button></app-whatsapp-button>
+    <app-dev-contact></app-dev-contact>
   `,
   styles: [
     `
@@ -59,6 +62,8 @@ import { WhatsappButtonComponent } from "./components/whatsapp-button/whatsapp-b
   ],
 })
 export class AppComponent implements AfterViewInit {
+  showIntro = true;
+
   ngAfterViewInit(): void {
     this.initScrollReveal();
   }

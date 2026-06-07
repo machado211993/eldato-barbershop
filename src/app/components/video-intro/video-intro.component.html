@@ -1,0 +1,42 @@
+<div class="vi" [class.vi--leaving]="isLeaving">
+
+  <video #videoEl class="vi__video" autoplay muted playsinline>
+    <source src="assets/images/videobarber.mp4" type="video/mp4" />
+  </video>
+
+  <!-- Overlay se oscurece progresivamente cuando aparece el contenido -->
+  <div class="vi__overlay" [class.vi__overlay--dark]="showContent"></div>
+
+  <!-- Brand + botones: solo visibles después de que termina el video -->
+  <div class="vi__content" [class.vi__content--show]="showContent">
+
+    <div class="vi__brand">
+      <div class="vi__accent-line"></div>
+      <h1 class="vi__name">El Dato</h1>
+      <span class="vi__type">Barbershop</span>
+      <p class="vi__tagline">Estilo &nbsp;·&nbsp; Precisión &nbsp;·&nbsp; Carácter</p>
+    </div>
+
+    <div class="vi__buttons" [class.vi__buttons--show]="showButtons">
+      <button class="vi__btn vi__btn--primary" (click)="goToSection('reservar')">
+        <i class="fas fa-calendar-check"></i>
+        Reservar Turno
+      </button>
+      <button class="vi__btn vi__btn--whatsapp" (click)="openWhatsApp()">
+        <i class="fab fa-whatsapp"></i>
+        WhatsApp
+      </button>
+      <button class="vi__btn vi__btn--ghost" (click)="goToSection('galeria')">
+        <i class="fas fa-images"></i>
+        Ver Trabajos
+      </button>
+    </div>
+
+  </div>
+
+  <!-- Solo visible mientras el video corre -->
+  <button class="vi__skip" *ngIf="!showContent" (click)="skipVideo()">
+    Saltar video &nbsp;<i class="fas fa-forward"></i>
+  </button>
+
+</div>
