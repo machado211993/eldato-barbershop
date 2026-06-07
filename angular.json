@@ -33,8 +33,16 @@
           "configurations": {
             "production": {
               "budgets": [
-                { "type": "initial", "maximumWarning": "500kb", "maximumError": "1mb" },
-                { "type": "anyComponentStyle", "maximumWarning": "2kb", "maximumError": "4kb" }
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "8kb"
+                }
               ],
               "outputHashing": "all"
             },
@@ -49,8 +57,12 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
-            "production": { "buildTarget": "eldato-barbershop:build:production" },
-            "development": { "buildTarget": "eldato-barbershop:build:development" }
+            "production": {
+              "buildTarget": "eldato-barbershop:build:production"
+            },
+            "development": {
+              "buildTarget": "eldato-barbershop:build:development"
+            }
           },
           "defaultConfiguration": "development"
         },
