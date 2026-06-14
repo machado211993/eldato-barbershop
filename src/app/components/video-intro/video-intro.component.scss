@@ -141,9 +141,10 @@
     }
 
     &--show {
-      .vi__btn:nth-child(1) { animation: vi-btn-pop 0.55s cubic-bezier(.4,0,.2,1) 0s    forwards; }
-      .vi__btn:nth-child(2) { animation: vi-btn-pop 0.55s cubic-bezier(.4,0,.2,1) 0.15s forwards; }
-      .vi__btn:nth-child(3) { animation: vi-btn-pop 0.55s cubic-bezier(.4,0,.2,1) 0.3s  forwards; }
+      .vi__btn:nth-child(1) { animation: vi-btn-pop 0.55s cubic-bezier(.4,0,.2,1) 0s     forwards; }
+      .vi__btn:nth-child(2) { animation: vi-btn-pop 0.55s cubic-bezier(.4,0,.2,1) 0.15s  forwards; }
+      .vi__btn:nth-child(3) { animation: vi-btn-pop 0.55s cubic-bezier(.4,0,.2,1) 0.3s   forwards; }
+      .vi__btn:nth-child(4) { animation: vi-btn-pop 0.55s cubic-bezier(.4,0,.2,1) 0.45s  forwards; }
     }
   }
 
@@ -189,6 +190,14 @@
         background: rgba(255, 255, 255, .22);
         box-shadow: 0 6px 20px rgba(255,255,255,.1);
       }
+    }
+
+    &--dev {
+      background: linear-gradient(135deg, #6c3fc5 0%, #3b82f6 100%);
+      color: #fff;
+      text-decoration: none;
+      box-shadow: 0 4px 24px rgba(108, 63, 197, .45);
+      &:hover { box-shadow: 0 8px 32px rgba(108, 63, 197, .65); }
     }
   }
 
