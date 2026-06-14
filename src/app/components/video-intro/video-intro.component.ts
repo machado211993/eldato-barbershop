@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, ElementRef, EventEmitter, AfterViewInit, Output, ViewChild } from '@angular/core';
+import { Component, EventEmitter, AfterViewInit, OnDestroy, Output } from '@angular/core';
 
 @Component({
   selector: 'app-video-intro',
@@ -8,39 +8,39 @@ import { Component, ElementRef, EventEmitter, AfterViewInit, Output, ViewChild }
   templateUrl: './video-intro.component.html',
   styleUrls: ['./video-intro.component.scss'],
 })
-export class VideoIntroComponent implements AfterViewInit {
-  @ViewChild('videoEl') videoEl!: ElementRef<HTMLVideoElement>;
+export class VideoIntroComponent implements AfterViewInit, OnDestroy {
   @Output() introDone = new EventEmitter<void>();
 
   showContent = false;
   showButtons  = false;
   isLeaving    = false;
 
+  private introTimer: ReturnType<typeof setTimeout> | null = null;
+
   ngAfterViewInit(): void {
     document.body.style.overflow = 'hidden';
-
-    const video = this.videoEl.nativeElement;
-
-    // Cuando termina el video → revelar brand y botones
-    video.addEventListener('ended', () => this.revealContent());
-    video.addEventListener('error', () => this.revealContent());
+    // Mostrar imagen 1 segundo, luego revelar brand y botones
+    this.introTimer = setTimeout(() => this.revealContent(), 1000);
   }
 
-  // Salta el video y muestra el contenido directamente
-  skipVideo(): void {
-    const video = this.videoEl.nativeElement;
-    video.pause();
+  ngOnDestroy(): void {
+    if (this.introTimer) clearTimeout(this.introTimer);
+  }
+
+  skipIntro(): void {
     this.revealContent();
   }
 
   private revealContent(): void {
     if (this.showContent) return;
+    if (this.introTimer) {
+      clearTimeout(this.introTimer);
+      this.introTimer = null;
+    }
     this.showContent = true;
-    // Botones aparecen un poco después del brand
     setTimeout(() => { this.showButtons = true; }, 1800);
   }
 
-  // Llamado al hacer clic en un botón de acción → cierra el intro
   goToSection(id: string): void {
     this.startLeave();
     setTimeout(() => {

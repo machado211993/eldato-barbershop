@@ -17,13 +17,13 @@
     pointer-events: none;
   }
 
-  /* ---------- VIDEO ---------- */
-  &__video {
+  /* ---------- IMAGEN DE INTRO ---------- */
+  &__bg {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     opacity: 0;
     animation: vi-video-reveal 1.2s ease 0.3s forwards;
   }
@@ -32,7 +32,7 @@
   &__overlay {
     position: absolute;
     inset: 0;
-    /* Overlay ligero mientras corre el video */
+    /* Overlay ligero durante el intro */
     background:
       linear-gradient(to top, rgba(0,0,0,.30) 0%, rgba(0,0,0,.10) 60%, rgba(0,0,0,.20) 100%);
     transition: background 1.2s ease;
@@ -192,7 +192,86 @@
     }
   }
 
-  /* ---------- SKIP BUTTON (solo durante el video) ---------- */
+  /* ---------- BOTÓN DEL PROGRAMADOR ---------- */
+  &__dev-btn {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    width: 54px;
+    height: 54px;
+    background: linear-gradient(135deg, #6c3fc5 0%, #3b82f6 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 24px rgba(108, 63, 197, 0.50);
+    animation: vi-fade 0.6s ease 1.5s forwards, devPulse 3.5s ease-in-out 2s infinite;
+    opacity: 0;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+
+    i {
+      color: #fff;
+      font-size: 22px;
+    }
+
+    &:hover {
+      transform: scale(1.12);
+
+      .vi__dev-tooltip {
+        opacity: 1;
+        transform: translateX(0);
+        pointer-events: auto;
+      }
+    }
+  }
+
+  &__dev-tooltip {
+    position: absolute;
+    left: 62px;
+    background: #0f0a1e;
+    border: 1px solid rgba(108, 63, 197, 0.45);
+    padding: 10px 16px;
+    border-radius: 10px;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: -6px;
+      top: 50%;
+      width: 10px;
+      height: 10px;
+      background: #0f0a1e;
+      border-left: 1px solid rgba(108, 63, 197, 0.45);
+      border-bottom: 1px solid rgba(108, 63, 197, 0.45);
+      transform: translateY(-50%) rotate(45deg);
+    }
+
+    &__title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: #fff;
+    }
+
+    &__sub {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.4px;
+      color: rgba(168, 139, 250, 0.9);
+    }
+  }
+
+  /* ---------- SKIP BUTTON ---------- */
   &__skip {
     position: absolute;
     bottom: 2rem;
@@ -262,6 +341,11 @@
   to   { opacity: 1; transform: translateY(0)    scale(1);    }
 }
 
+@keyframes devPulse {
+  0%, 100% { box-shadow: 0 8px 24px rgba(108, 63, 197, 0.45); }
+  50%       { box-shadow: 0 8px 40px rgba(108, 63, 197, 0.75), 0 0 0 12px rgba(108, 63, 197, 0.10); }
+}
+
 /* =============================================
    RESPONSIVE
    ============================================= */
@@ -282,6 +366,14 @@
     &__skip {
       bottom: 1.2rem;
       right: 1.2rem;
+    }
+
+    &__dev-btn {
+      width: 46px;
+      height: 46px;
+      bottom: 1.2rem;
+      left: 1.2rem;
+      i { font-size: 18px; }
     }
   }
 }

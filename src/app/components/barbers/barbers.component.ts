@@ -28,14 +28,14 @@ export class BarbersComponent {
     {
       name: "Nahuel",
       role: "Senior Barber",
-      bio: "Especialista en cortes clásicos y afeitado con navaja. Conocido por su precisión quirúrgica y su trato cálido con cada cliente.",
-      skills: ["Clásico", "Barba", "Afeitado"],
+      bio: "Especialista en cortes clásicos, afeitado con navaja y coloración. Conocido por su precisión quirúrgica y su trato cálido con cada cliente.",
+      skills: ["Clásico", "Barba", "Afeitado", "Color"],
     },
     {
       name: "Elian",
       role: "Barber Specialist",
-      bio: "Experto en tendencias actuales y cortes modernos. Siempre actualizado en las últimas técnicas internacionales del mundo de la barbería.",
-      skills: ["Moderno", "Texturas", "Color"],
+      bio: "Especialista en cortes para niños y cortes clásicos. Paciencia y dedicación para que los más chicos salgan siempre contentos.",
+      skills: ["Niños", "Clásico"],
     },
   ];
 }

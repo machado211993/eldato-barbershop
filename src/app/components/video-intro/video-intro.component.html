@@ -1,13 +1,11 @@
 <div class="vi" [class.vi--leaving]="isLeaving">
 
-  <video #videoEl class="vi__video" autoplay muted playsinline>
-    <source src="assets/images/videobarber.mp4" type="video/mp4" />
-  </video>
+  <img class="vi__bg" src="assets/images/barber_inicio.jpeg" alt="" />
 
   <!-- Overlay se oscurece progresivamente cuando aparece el contenido -->
   <div class="vi__overlay" [class.vi__overlay--dark]="showContent"></div>
 
-  <!-- Brand + botones: solo visibles después de que termina el video -->
+  <!-- Brand + botones: visibles después del segundo inicial -->
   <div class="vi__content" [class.vi__content--show]="showContent">
 
     <div class="vi__brand">
@@ -34,9 +32,23 @@
 
   </div>
 
-  <!-- Solo visible mientras el video corre -->
-  <button class="vi__skip" *ngIf="!showContent" (click)="skipVideo()">
-    Saltar video &nbsp;<i class="fas fa-forward"></i>
+  <!-- Saltar: visible después de 1.5s -->
+  <button class="vi__skip" *ngIf="!showContent" (click)="skipIntro()">
+    Saltar &nbsp;<i class="fas fa-forward"></i>
   </button>
+
+  <!-- Botón del programador (visible durante el intro, el componente global queda detrás) -->
+  <a
+    class="vi__dev-btn"
+    href="https://wa.me/5493794862502?text=Hola%20Manuel!%20Vi%20tu%20trabajo%20en%20El%20Dato%20Barbershop%20y%20me%20gustar%C3%ADa%20hablar%20sobre%20una%20web."
+    target="_blank"
+    title="¿Necesitás una web? Contactame"
+  >
+    <i class="fas fa-laptop-code"></i>
+    <span class="vi__dev-tooltip">
+      <span class="vi__dev-tooltip__title">¿Necesitás una web?</span>
+      <span class="vi__dev-tooltip__sub">Contactame →</span>
+    </span>
+  </a>
 
 </div>
