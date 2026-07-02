@@ -191,6 +191,14 @@ footer {
   gap: 14px;
   flex-wrap: wrap;
 
+  .footer-dev-logo {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    object-fit: cover;
+    opacity: 0.85;
+  }
+
   .footer-dev-text {
     font-size: 10px;
     letter-spacing: 0.6px;

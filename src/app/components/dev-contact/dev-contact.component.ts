@@ -5,15 +5,15 @@ import { Component } from '@angular/core';
   standalone: true,
   template: `
     <a
-      href="https://wa.me/5493794862502?text=Hola%20Manuel!%20Vi%20tu%20trabajo%20en%20El%20Dato%20Barbershop%20y%20me%20gustar%C3%ADa%20hablar%20sobre%20una%20web."
+      href="https://wa.me/5493795694391?text=Hola%20MJ%20Solutions!%20Vi%20tu%20trabajo%20en%20El%20Dato%20Barbershop%20y%20me%20gustar%C3%ADa%20hablar%20sobre%20una%20web."
       target="_blank"
       class="dev-btn"
-      title="¿Necesitás una web? Contactame"
+      title="¿Necesitás una web? Contactá a MJ Solutions"
     >
       <i class="fas fa-laptop-code"></i>
       <span class="dev-tooltip">
         <span class="dev-tooltip__title">¿Necesitás una web?</span>
-        <span class="dev-tooltip__sub">Contactame →</span>
+        <span class="dev-tooltip__sub">MJ Solutions →</span>
       </span>
     </a>
   `,
